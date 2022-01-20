@@ -1,0 +1,46 @@
+$blue: lightblue;
+$white: white;
+
+// this is a function called corners and we are passing value
+@mixin corners($radius) {
+  border-radius: $radius;
+}
+
+@mixin transition {
+  transition: all 0.5s ease-in-out;
+}
+
+body {
+  background-color: $blue;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  text-align: center;
+  color: $white;
+  h1 {
+    font-family: "roboto", sans-serif;
+    font-size: 50px;
+  }
+  #seconds, #tens {
+    font-size: 40px;
+  }
+
+  button {
+    background-color: $blue;
+    color: $white;
+    font-size: 30px;
+    padding: 10px;
+    width: 150px;
+    margin: 15px;
+    border: 2px solid $white;
+    cursor: pointer;
+    @include corners(20px);
+    &:hover {
+      background-color: $white;
+      color: $blue;
+      border: 2px solid black;
+      @include transition();
+    }
+  }
+}
